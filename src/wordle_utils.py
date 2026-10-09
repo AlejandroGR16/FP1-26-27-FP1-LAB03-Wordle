@@ -20,7 +20,7 @@ def es_palabra_valida(cadena: str) -> bool:
     return False
 
 def calcula_minutos_y_segundos(inicio: datetime, fin: datetime) -> tuple:
-    """ 
+    '''
     Recibe dos datetime y devuelve la diferencia en minutos y segundos.
 
     Parámetros:
@@ -28,7 +28,7 @@ def calcula_minutos_y_segundos(inicio: datetime, fin: datetime) -> tuple:
         fin: datetime de fin
     Devuelve:
         Una tupla (minutos, segundos) con la diferencia entre los dos datetime
-    """
+    '''
     return (((fin-inicio).seconds)//60,((fin-inicio).seconds)%60)
 
 def quitar_letras(letras_restantes: str, letra: str):
