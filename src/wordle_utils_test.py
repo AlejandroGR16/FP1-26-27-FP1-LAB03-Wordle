@@ -1,4 +1,5 @@
-from wordle_utils import es_palabra_valida, calcula_minutos_y_segundos, es_palabra_valida, marcar_amarillos, marcar_verdes, obtener_pistas, quitar_letras,
+from wordle_utils import es_palabra_valida, calcula_minutos_y_segundos, es_palabra_valida, marcar_amarillos, marcar_verdes, obtener_pistas, quitar_letras
+import datetime
 
 def test_es_palabra_valida():
     print("Probando es_palabra_valida...")
@@ -11,9 +12,9 @@ def test_es_palabra_valida():
     assert es_palabra_valida("CASAR") == True
 
 def test_calcula_minutos_y_segundos():
-    assert calcula_minutos_y_segundos(datetime(2024, 1, 1, 23, 0, 0), datetime(2024, 1, 1, 23, 0, 30)) == (0, 30)
-    assert calcula_minutos_y_segundos(datetime(2024, 1, 1, 23, 0, 0), datetime(2024, 1, 1, 23, 3, 45)) == (3, 45)
-    assert calcula_minutos_y_segundos(datetime(2024, 1, 1, 23, 0, 0), datetime(2024, 1, 2, 0, 1, 15)) == (61, 15)
+    assert calcula_minutos_y_segundos(datetime.datetime(2024, 1, 1, 23, 0, 0), datetime.datetime(2024, 1, 1, 23, 0, 30)) == (0, 30)
+    assert calcula_minutos_y_segundos(datetime.datetime(2024, 1, 1, 23, 0, 0), datetime.datetime(2024, 1, 1, 23, 3, 45)) == (3, 45)
+    assert calcula_minutos_y_segundos(datetime.datetime(2024, 1, 1, 23, 0, 0), datetime.datetime(2024, 1, 2, 0, 1, 15)) == (61, 15)
 
 def test_quitar_letras():
     assert quitar_letras("casar", "a") == "csar"
